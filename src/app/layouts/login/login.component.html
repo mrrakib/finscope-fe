@@ -47,13 +47,13 @@
                             </a>
                         </div>
 
-                        <button type="submit" class="btn btn-primary w-100 mb-3">
+                        <button type="button" (click)="login()" class="btn btn-primary w-100 mb-3">
                             Sign In
                         </button>
 
                         <div class="text-center">
                             <span class="text-muted small">Don't have an account? </span>
-                            <a href="register.html" class="text-decoration-none">Create Account</a>
+                            <a routerLink="/register" class="text-decoration-none">Create Account</a>
                         </div>
                     </form>
                 </div>
