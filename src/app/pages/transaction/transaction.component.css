@@ -1,0 +1,337 @@
+/* Custom Styles for Transaction Manager */
+
+.card-header {
+  border-radius: 12px 12px 0 0 !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.shadow-sm {
+  box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.1) !important;
+}
+
+.form-control,
+.form-select {
+  border-radius: 8px;
+  border: 1px solid #ced4da;
+  transition: all 0.15s ease-in-out;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: #86b7fe;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.15);
+}
+
+.btn {
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.15s ease-in-out;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.table th {
+  font-weight: 600;
+  color: #495057;
+  border-bottom: 2px solid #dee2e6;
+}
+
+.table td {
+  vertical-align: middle;
+  transition: all 0.2s ease-in-out;
+}
+
+.table tbody tr {
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.table tbody tr:hover {
+  background-color: #f8f9ff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.table tbody tr:hover td:first-child {
+  border-radius: 8px 0 0 8px;
+}
+
+.table tbody tr:hover td:last-child {
+  border-radius: 0 8px 8px 0;
+}
+
+.transaction-amount {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.transaction-income {
+  color: #198754;
+}
+
+.transaction-expense {
+  color: #dc3545;
+}
+
+.transaction-type-badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.35rem 0.65rem;
+}
+
+.action-buttons .btn {
+  padding: 0.25rem 0.5rem;
+  margin: 0 0.125rem;
+}
+
+.form-check-input:checked {
+  background-color: #198754;
+  border-color: #198754;
+}
+
+.form-check-input:focus {
+  border-color: #86b7fe;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+/* Transaction Type Button Group */
+.transaction-type-group {
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  padding: 4px;
+  display: inline-flex;
+  border: 1px solid #e9ecef;
+}
+
+.transaction-type-btn {
+  background: none;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+  color: #6c757d;
+  cursor: pointer;
+  min-width: 80px;
+}
+
+.transaction-type-btn:hover {
+  background-color: rgba(13, 110, 253, 0.1);
+  color: #0d6efd;
+}
+
+.transaction-type-btn.active {
+  background-color: #0d6efd;
+  color: white;
+  box-shadow: 0 2px 4px rgba(13, 110, 253, 0.3);
+}
+
+.transaction-type-btn.active.expense {
+  background-color: #dc3545;
+  box-shadow: 0 2px 4px rgba(220, 53, 69, 0.3);
+}
+
+.transaction-type-btn.active.income {
+  background-color: #198754;
+  box-shadow: 0 2px 4px rgba(25, 135, 84, 0.3);
+}
+
+/* Enhanced Action Buttons */
+.action-buttons .btn {
+  transition: all 0.2s ease-in-out;
+  border-radius: 6px;
+}
+
+.action-buttons .btn:hover {
+  transform: translateY(-1px) scale(1.05);
+}
+
+.action-buttons .btn-outline-primary:hover {
+  box-shadow: 0 4px 8px rgba(13, 110, 253, 0.3);
+}
+
+.action-buttons .btn-outline-danger:hover {
+  box-shadow: 0 4px 8px rgba(220, 53, 69, 0.3);
+}
+
+/* Enhanced Cards */
+.card {
+  transition: all 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Transaction Amount Animation */
+.transaction-amount {
+  position: relative;
+  overflow: hidden;
+}
+
+.transaction-amount::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  transition: left 0.5s;
+}
+
+.table tbody tr:hover .transaction-amount::before {
+  left: 100%;
+}
+
+/* Enhanced Badge Animation */
+.transaction-type-badge {
+  transition: all 0.2s ease-in-out;
+}
+
+.table tbody tr:hover .transaction-type-badge {
+  transform: scale(1.05);
+}
+
+/* Smooth Table Transitions */
+.table-responsive {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.table {
+  margin-bottom: 0;
+}
+
+.table thead th {
+  background-color: #f8f9fa;
+  border-bottom: 2px solid #e9ecef;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  color: #495057;
+  padding: 1rem 0.75rem;
+}
+
+/* Select2 Custom Styling */
+.select2-container--default .select2-selection--single {
+  height: 38px;
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  padding: 6px 12px;
+}
+
+.select2-container--default
+  .select2-selection--single
+  .select2-selection__rendered {
+  line-height: 24px;
+  color: #495057;
+}
+
+.select2-container--default
+  .select2-selection--single
+  .select2-selection__arrow {
+  height: 36px;
+}
+
+.select2-container--default.select2-container--focus
+  .select2-selection--single {
+  border-color: #86b7fe;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.15);
+}
+
+.select2-dropdown {
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+}
+
+.select2-container--default
+  .select2-results__option--highlighted[aria-selected] {
+  background-color: #0d6efd;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .table-responsive {
+    font-size: 0.875rem;
+  }
+
+  .action-buttons .btn {
+    padding: 0.125rem 0.25rem;
+    font-size: 0.75rem;
+  }
+
+  .transaction-amount {
+    font-size: 1rem;
+  }
+
+  .card-body {
+    padding: 1rem;
+  }
+
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar-brand {
+    font-size: 1.25rem;
+  }
+
+  .table th,
+  .table td {
+    padding: 0.5rem 0.25rem;
+  }
+
+  .btn {
+    font-size: 0.875rem;
+  }
+}
+
+/* Animation for form toggle */
+#transactionForm {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Empty state styling */
+#emptyState {
+  opacity: 0.7;
+}
+
+#emptyState .display-1 {
+  font-size: 4rem;
+}
+
+/* Loading state */
+.btn-loading {
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+/* Success and error states */
+.alert {
+  border-radius: 8px;
+  border: none;
+}
+
+.alert-success {
+  background-color: #d1edff;
+  color: #0c63e4;
+}
+
+.alert-danger {
+  background-color: #f8d7da;
+  color: #721c24;
+}
