@@ -1,62 +1,95 @@
-    <div class="container-fluid vh-100">
-        <div class="row h-100">
-            <!-- Left Side - Simple Branding -->
-            <div class="col-md-6 d-flex align-items-center justify-content-center bg-primary text-white">
-                <div class="text-center">
-                    <i class="bi bi-wallet2 display-4 mb-3"></i>
-                    <h2 class="fw-bold mb-2">FinanceTracker</h2>
-                    <p class="mb-0 opacity-75">Smart financial management</p>
-                </div>
-            </div>
-
-            <!-- Right Side - Login Form -->
-            <div class="col-md-6 d-flex align-items-center justify-content-center">
-                <div class="w-100" style="max-width: 400px;">
-                    <div class="text-center mb-4">
-                        <h3 class="fw-bold text-dark mb-1">Welcome Back</h3>
-                        <p class="text-muted small">Sign in to your account</p>
-                    </div>
-
-                    <form id="loginForm">
-                        <div class="mb-3">
-                            <label for="username" class="form-label">Username</label>
-                            <div class="input-group">
-                                <span class="input-group-text"><i class="bi bi-person"></i></span>
-                                <input type="text" class="form-control" id="username" placeholder="Enter username" required>
-                            </div>
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="password" class="form-label">Password</label>
-                            <div class="input-group">
-                                <span class="input-group-text"><i class="bi bi-lock"></i></span>
-                                <input [type]="inpType" class="form-control" id="password" placeholder="Enter password" required>
-                                <button class="btn btn-outline-secondary" type="button" (click)="tooglePass()">
-                                    <i class="bi bi-eye"></i>
-                                </button>
-                            </div>
-                        </div>
-
-                        <div class="d-flex justify-content-between align-items-center mb-3">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="rememberMe">
-                                <label class="form-check-label small" for="rememberMe">Remember me</label>
-                            </div>
-                            <a href="#" class="text-decoration-none small" data-bs-toggle="modal" data-bs-target="#forgotModal">
-                                Forgot Password?
-                            </a>
-                        </div>
-
-                        <button type="button" (click)="login()" class="btn btn-primary w-100 mb-3">
-                            Sign In
-                        </button>
-
-                        <div class="text-center">
-                            <span class="text-muted small">Don't have an account? </span>
-                            <a routerLink="/register" class="text-decoration-none">Create Account</a>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
+<div class="container-fluid vh-100">
+  <div class="row h-100">
+    <!-- Left Side - Simple Branding -->
+    <div
+      class="col-md-6 d-flex align-items-center justify-content-center bg-primary text-white"
+    >
+      <div class="text-center">
+        <i class="bi bi-wallet2 display-4 mb-3"></i>
+        <h2 class="fw-bold mb-2">FinanceTracker</h2>
+        <p class="mb-0 opacity-75">Smart financial management</p>
+      </div>
     </div>
+
+    <!-- Right Side - Login Form -->
+    <div class="col-md-6 d-flex align-items-center justify-content-center">
+      <div class="w-100" style="max-width: 400px">
+        <div class="text-center mb-4">
+          <h3 class="fw-bold text-dark mb-1">Welcome Back</h3>
+          <p class="text-muted small">Sign in to your account</p>
+        </div>
+
+        <form [formGroup]="form" (ngSubmit)="login()">
+          <div class="mb-3">
+            <label for="username" class="form-label">Email</label>
+            <div class="input-group">
+              <span class="input-group-text"><i class="bi bi-person"></i></span>
+              <input
+                type="text"
+                formControlName="email"
+                class="form-control"
+                id="username"
+                placeholder="Enter username"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <div class="input-group">
+              <span class="input-group-text"><i class="bi bi-lock"></i></span>
+              <input
+                [type]="inpType"
+                formControlName="password"
+                class="form-control"
+                id="password"
+                placeholder="Enter password"
+                required
+              />
+              <button
+                class="btn btn-outline-secondary"
+                type="button"
+                (click)="tooglePass()"
+              >
+                <i class="bi bi-eye"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="rememberMe" />
+              <label class="form-check-label small" for="rememberMe"
+                >Remember me</label
+              >
+            </div>
+            <a
+              href="#"
+              class="text-decoration-none small"
+              data-bs-toggle="modal"
+              data-bs-target="#forgotModal"
+            >
+              Forgot Password?
+            </a>
+          </div>
+
+          <button
+            type="button"
+            (click)="login()"
+            class="btn btn-primary w-100 mb-3"
+          >
+            Sign In
+          </button>
+
+          <div class="text-center">
+            <span class="text-muted small">Don't have an account? </span>
+            <a routerLink="/register" class="text-decoration-none"
+              >Create Account</a
+            >
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
