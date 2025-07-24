@@ -45,20 +45,35 @@
       </div>
       <div class="modal-body">
         <form id="expenseForm">
-          <div class="mb-3">
-            <label for="expenseDate" class="form-label">Date</label>
-            <input type="date" class="form-control" id="expenseDate" required />
-          </div>
-          <div class="mb-3">
-            <label for="expenseDescription" class="form-label"
-              >Description</label
-            >
-            <input
-              type="text"
-              class="form-control"
-              id="expenseDescription"
-              required
-            />
+          <div class="row mb-3">
+            <div class="col-md-6">
+              <label for="expenseAmount" class="form-label">Amount</label>
+              <input
+                type="number"
+                class="form-control"
+                id="expenseAmount"
+                step="0.01"
+                min="0"
+                required
+              />
+            </div>
+            <div class="col-md-6">
+              <label for="expenseDate" class="form-label">Date</label>
+              <div class="input-group">
+                <input
+                  class="form-control"
+                  placeholder="yyyy-mm-dd"
+                  name="dp"
+                  ngbDatepicker
+                  #d="ngbDatepicker"
+                />
+                <button
+                  class="btn btn-outline-secondary bi bi-calendar3"
+                  (click)="d.toggle()"
+                  type="button"
+                ></button>
+              </div>
+            </div>
           </div>
           <div class="mb-3">
             <label for="expenseCategory" class="form-label">Category</label>
@@ -66,16 +81,12 @@
               <option value="">Select Category</option>
             </select>
           </div>
+
           <div class="mb-3">
-            <label for="expenseAmount" class="form-label">Amount</label>
-            <input
-              type="number"
-              class="form-control"
-              id="expenseAmount"
-              step="0.01"
-              min="0"
-              required
-            />
+            <label for="expenseDescription" class="form-label"
+              >Description</label
+            >
+            <textarea rows="3" class="form-control"> </textarea>
           </div>
         </form>
       </div>
